@@ -4,7 +4,7 @@ export default function HeroSection() {
       {/* Text Content */}
       <div className="flex-1 text-center md:text-left">
         <h1 className="text-6xl font-bold mb-6 text-gray-900">
-          Welcome to <span className="text-6xl">StartifyAI</span>
+          Welcome to <span className="text-6xl">Startify-AI</span>
         </h1>
         <h1 className="text-4xl font-semibold mb-6  ">
           Your <span className="text-343CFF">AI Co-Pilot</span> for{" "}
@@ -19,10 +19,9 @@ export default function HeroSection() {
           <h3 className="text-xl font-semibold mb-4">
             So what are you waiting for? Start your{" "}
             <span className="underline">startup journey</span> with{" "}
-            <span className="text-343CFF">StartifyAI</span> now
+            <span className="text-343CFF">Startify-AI</span> now
           </h3>
         </div>
-     
       </div>
 
       {/* Vector Image */}

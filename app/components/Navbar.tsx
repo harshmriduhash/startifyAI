@@ -34,7 +34,10 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 items-center">
           <li>
-            <Link href="/" className="hover:text-blue-500 tracking-widest uppercase text-sm">
+            <Link
+              href="/"
+              className="hover:text-blue-500 tracking-widest uppercase text-sm"
+            >
               Home
             </Link>
           </li>
@@ -55,7 +58,10 @@ export default function Navbar() {
             </button>
           </li>
           <li>
-            <Link href="/startup-health-check" className="hover:text-blue-500 tracking-widest uppercase text-sm">
+            <Link
+              href="/startup-health-check"
+              className="hover:text-blue-500 tracking-widest uppercase text-sm"
+            >
               Health Check
             </Link>
           </li>
@@ -68,7 +74,10 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/history" className="hover:text-blue-500 tracking-widest uppercase text-sm">
+            <Link
+              href="/history"
+              className="hover:text-blue-500 tracking-widest uppercase text-sm"
+            >
               History
             </Link>
           </li>
@@ -102,7 +111,11 @@ export default function Navbar() {
         <div className="md:hidden bg-white shadow-md py-4 px-6">
           <ul className="space-y-4">
             <li>
-              <Link href="/" className="hover:text-blue-500" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/"
+                className="hover:text-blue-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </Link>
             </li>

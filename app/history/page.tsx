@@ -5,7 +5,7 @@ import axiosInstance from "../axiosInstance";
 import { useAuth } from "@clerk/nextjs";
 
 interface HistoryEntry {
-  id: string; 
+  id: string;
   user_id: string;
   type: "query" | "health_check" | "pitch_deck";
   input: Record<string, any>;
@@ -26,10 +26,10 @@ export default function HistoryPage() {
       setLoading(false);
       return;
     }
-  
+
     setLoading(true);
     setError("");
-  
+
     const fetchHistory = async () => {
       try {
         const response = await axiosInstance.get(`/history/${userId}`);
@@ -40,7 +40,7 @@ export default function HistoryPage() {
         setLoading(false);
       }
     };
-  
+
     fetchHistory();
   }, [userId]);
 
@@ -60,11 +60,23 @@ export default function HistoryPage() {
 
       <div className="mt-8 space-y-4">
         {history.map((entry, index) => (
-          <div key={index} className="p-4 border rounded-md bg-gray-50 shadow-sm">
-            <p><strong>Type:</strong> {entry.type.toUpperCase()}</p>
-            <p><strong>Timestamp:</strong> {new Date(entry.timestamp).toLocaleString()}</p>
-            <p><strong>Input:</strong> {JSON.stringify(entry.input)}</p>
-            <p><strong>Output:</strong> {entry.output}</p>
+          <div
+            key={index}
+            className="p-4 border rounded-md bg-gray-50 shadow-sm"
+          >
+            <p>
+              <strong>Type:</strong> {entry.type.toUpperCase()}
+            </p>
+            <p>
+              <strong>Timestamp:</strong>{" "}
+              {new Date(entry.timestamp).toLocaleString()}
+            </p>
+            <p>
+              <strong>Input:</strong> {JSON.stringify(entry.input)}
+            </p>
+            <p>
+              <strong>Output:</strong> {entry.output}
+            </p>
           </div>
         ))}
       </div>
