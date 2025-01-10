@@ -72,10 +72,10 @@ export default function HistoryPage() {
               {new Date(entry.timestamp).toLocaleString()}
             </p>
             <p>
-              <strong>Input:</strong> {JSON.stringify(entry.input)}
+              <strong>Input:-</strong> {JSON.stringify(entry.input)}
             </p>
             <p>
-              <strong>Output:</strong> {entry.output}
+              <strong>Output:-</strong> {entry.output}
             </p>
           </div>
         ))}
