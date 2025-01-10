@@ -4,7 +4,6 @@ import { useState } from "react";
 import axiosInstance from "../axiosInstance";
 import { saveAs } from "file-saver";
 
-
 export default function PitchDeckGenerator() {
   const [formData, setFormData] = useState({
     name: "",
@@ -42,8 +41,8 @@ export default function PitchDeckGenerator() {
     }
   };
 
-   // Download pitch deck as Word document
-   const handleDownloadWord = () => {
+  // Download pitch deck as Word document
+  const handleDownloadWord = () => {
     if (!pitchDeck) return;
 
     // Prepare the content for Word document
@@ -63,14 +62,16 @@ export default function PitchDeckGenerator() {
 
     saveAs(blob, fileName);
   };
-  
 
   return (
     <section className="container mx-auto py-16 px-6">
       {/* Heading */}
-      <h1 className="text-4xl font-bold mb-4 text-center">📝 Pitch Deck Generator</h1>
+      <h1 className="text-4xl font-bold mb-4 text-center">
+        📝 Pitch Deck Generator
+      </h1>
       <p className="text-gray-600 text-center mb-8">
-        Create AI-powered pitch decks tailored to your startup's unique vision and goals.
+        Create AI-powered pitch decks tailored to your startup's unique vision
+        and goals.
       </p>
 
       {/* Form Section */}
@@ -78,30 +79,32 @@ export default function PitchDeckGenerator() {
         <h2 className="text-2xl font-bold mb-4">Enter Startup Details</h2>
         <div className="grid grid-cols-1 gap-4">
           {/* Input Fields */}
-          {["name", "domain", "problem", "solution", "founders"].map((field) => (
-            <div key={field}>
-              <label className="block text-sm font-medium mb-1 capitalize">
-                {field.replace(/_/g, " ")}
-              </label>
-              {field === "problem" || field === "solution" ? (
-                <textarea
-                  name={field}
-                  value={formData[field as keyof typeof formData]}
-                  onChange={handleChange}
-                  rows={3}
-                  className="w-full p-2 rounded-md border"
-                />
-              ) : (
-                <input
-                  type="text"
-                  name={field}
-                  value={formData[field as keyof typeof formData]}
-                  onChange={handleChange}
-                  className="w-full p-2 rounded-md border"
-                />
-              )}
-            </div>
-          ))}
+          {["name", "domain", "problem", "solution", "founders"].map(
+            (field) => (
+              <div key={field}>
+                <label className="block text-sm font-medium mb-1 capitalize">
+                  {field.replace(/_/g, " ")}
+                </label>
+                {field === "problem" || field === "solution" ? (
+                  <textarea
+                    name={field}
+                    value={formData[field as keyof typeof formData]}
+                    onChange={handleChange}
+                    rows={3}
+                    className="w-full p-2 rounded-md border"
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    name={field}
+                    value={formData[field as keyof typeof formData]}
+                    onChange={handleChange}
+                    className="w-full p-2 rounded-md border"
+                  />
+                )}
+              </div>
+            )
+          )}
         </div>
 
         {/* Generate Button */}
