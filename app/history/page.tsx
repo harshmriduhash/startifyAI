@@ -55,7 +55,7 @@ export default function HistoryPage() {
       {error && <p className="text-red-500">{error}</p>}
 
       {!loading && !error && history.length === 0 && (
-        <p className="text-gray-500 text-center">No history available yet.</p>
+        <p className="text-gray-500 text-center">No history available yet..</p>
       )}
 
       <div className="mt-8 space-y-4">
