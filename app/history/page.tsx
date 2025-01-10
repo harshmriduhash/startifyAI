@@ -65,10 +65,10 @@ export default function HistoryPage() {
             className="p-4 border rounded-md bg-gray-50 shadow-sm"
           >
             <p>
-              <strong>Type:</strong> {entry.type.toUpperCase()}
+              <strong>Type:-</strong> {entry.type.toUpperCase()}
             </p>
             <p>
-              <strong>Timestamp:</strong>{" "}
+              <strong>Timestamp:-</strong>{" "}
               {new Date(entry.timestamp).toLocaleString()}
             </p>
             <p>
